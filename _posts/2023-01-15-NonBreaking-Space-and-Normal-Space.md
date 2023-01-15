@@ -1,7 +1,7 @@
 ---
 layout:     post
 title:      Non-breaking Space and Normal Space
-subtitle:   QString, std::wtring and std::string
+subtitle:   QString, std::wstring and std::string
 date:       2023-01-15
 author:     Yves
 header-img: "img/post-bg.jpg"
