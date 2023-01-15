@@ -1,6 +1,6 @@
 # Site settings
-# title: Yves Blog
-# SEOTitle: Yves Blog
+title: Yves Blog
+SEOTitle: Yves Blog
 header-img: img/post-bg-desk.jpg
 email: You-Yi.Zhang@outlook.com
 description: "Every failure is leading towards success."
@@ -57,7 +57,7 @@ kramdown:
 
 # 评论系统
 #Disqus(https://disqus.com/)
-disqus_username: YvesZhang
+#disqus_username: YvesZhang
 
 # Gitalk
 # gitalk:
