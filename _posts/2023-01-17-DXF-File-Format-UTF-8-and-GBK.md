@@ -1,7 +1,7 @@
 ---
 layout:     post
-title:      DXF File Format UTF-8 and GBK
-subtitle:   Coding format
+title:      DXF File Format:UTF-8 and GBK
+subtitle:   Encoding format
 date:       2023-01-17
 author:     Yves
 header-img: "img/post-bg.jpg"
