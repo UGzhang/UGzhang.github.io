@@ -19,10 +19,9 @@ Extract date from a DXF file and write it to a txt file.
 A DXF file has 1422390 lines and a size of 10.5M.
 
 ## Result
-|Replication Times|Before Opt (Avg.)|After Opt (Avg.)| 
-|---|-------|-------|
-|100|1.3329s|0.6027s|
-
+**Replication Times**: 100  
+Average run time **before** optimization: 1.3329s  
+Average run time **after** optimization: 0.6027s    
 
 ## Debugging
 **Tool**: Visual Studio 2019 - CPU Usage - Call Tree  
@@ -44,7 +43,7 @@ The double precision is unnecessary as the render precision is set to float.
 
 ### 2. pointToValue()  
 - **Describe**: Converting double to std::string
-- **Analysis**: The most expensive part is `str = std::to_string(x) + ","` which involves two string allocations and a copy from the previous string to the new allocation. To reduce time, I replace [std::to_string()](https://en.cppreference.com/w/cpp/string/basic_string/to_string) to [sprintf_s()](https://en.cppreference.com/w/c/io/fprintf). And std::to_chars(C++17) has better performent than sprintf_s(), but c++17 is not supported by our application.
+- **Analysis**: The most expensive part is `temp = std::to_string(x) + ","` which involves two string allocations and a copy from the previous string to the new allocation. To reduce time, I replace [std::to_string()](https://en.cppreference.com/w/cpp/string/basic_string/to_string) to [sprintf_s()](https://en.cppreference.com/w/c/io/fprintf). And std::to_chars(C++17) has better performent than sprintf_s(), but c++17 is not supported by our application.
 - **Before Opt**: ***218***/862(ms) = 26.49%  
 ![image](/img/20230116/2.3.png)
 
