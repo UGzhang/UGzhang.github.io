@@ -19,7 +19,7 @@ The graph below illustrates the difference in the display scene beteewn our appl
 
 ## Debugging
 This curve are composed of B-splines, so I remove most of them and only keep small portion of the curve to simplify debugging.
-The accompanying figure compares the simplified curve in AutoCAD and our application, it clearly illustrates the problematic problem.
+The accompanying figure compares the simplified curve in AutoCAD and our application, it clearly illustrates the problematic display.
 ![image](/img/20230122/3.2.png)
 
 I have no idea unitl examining the X/Y value of one of the points, the value is large.
