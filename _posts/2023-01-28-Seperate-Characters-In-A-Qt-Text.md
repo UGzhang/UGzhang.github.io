@@ -1,6 +1,6 @@
 ---
 layout:     post
-title:      Seperate Characters In A Qt Text
+title:      Seperate Characters In a Qt Text
 subtitle:   QTextDocument
 date:       2023-01-28
 author:     Yves
@@ -53,7 +53,7 @@ void seperate(){
         for (int i = 0; i < context.length(); i++)
         {
             glyphs.append(line.glyphRuns(i, 1));
-            // get the interval from fisrt word to current word (img 3)
+            // get the interval from fisrt word to current word (img 4)
             auto interval = glyphs[i].positions(); 
             pos.push_back(interval); 
 
