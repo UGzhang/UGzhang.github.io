@@ -3,7 +3,7 @@ layout:     post
 title:      Read and Write Time Optimization
 subtitle:   Faster type conversion
 date:       2023-01-16
-author:     Yves
+author:     UG
 header-img: "img/post-bg.jpg"
 catalog: true
 tags:
@@ -76,3 +76,6 @@ The double precision is unnecessary as the render precision is set to float.
 ## Difference
 - **Describe**: There are some differences between previous output file and new file.
 ![image](/img/20230116/2.9.png)
+
+## References
+The original code from [LibreCAD](https://github.com/LibreCAD/LibreCAD).
