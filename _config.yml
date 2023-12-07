@@ -1,13 +1,13 @@
 # Site settings
-title: Yves Blog
-SEOTitle: Yves Blog
+title: UG Blog
+SEOTitle: UG Blog
 header-img: img/post-bg-desk.jpg
 email: You-Yi.Zhang@outlook.com
 description: "Every failure is leading towards success."
 keyword: "C++, Qt"
-url: "https://yves-y-zhang.github.io/"          # your host, for absolute URL
-baseurl: ""      # for example, '/blog' if your blog hosted on 'host/blog'
-github_repo: "https://github.com/Yves-Y-Zhang/Yves-Y-Zhang.github.io" # you code repository
+url: "UG"          # your host, for absolute URL
+baseurl: "https://ugzhang.github.io"      # for example, '/blog' if your blog hosted on 'host/blog'
+github_repo: "https://github.com/UGzhang/UGzhang.github.io" # you code repository
 
 # Sidebar settings
 sidebar: true                           # whether or not using Sidebar.
@@ -20,7 +20,7 @@ sidebar-avatar: /img/about-BY-gentle.jpg     # use absolute URL, seeing it's use
 RSS: false
 # weibo_username:     qiubaiying
 # zhihu_username:     
-github_username:    yves-y-zhang
+github_username:    UGzhang
 # facebook_username:  
 # jianshu_username:   
 #twitter_username:   qiubaiying

@@ -1,4 +1,4 @@
-## [Go Blog](https://yves-y-zhang.github.io/)
+## [Go Blog](https://ugzhang.github.io)
 
 ## Acknowledgements
 Fork From [qiubaiying](https://github.com/qiubaiying/qiubaiying.github.io)

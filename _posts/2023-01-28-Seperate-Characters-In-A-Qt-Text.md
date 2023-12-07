@@ -3,7 +3,7 @@ layout:     post
 title:      Seperate Characters In a Qt Text
 subtitle:   QTextDocument
 date:       2023-01-28
-author:     Yves
+author:     UG
 header-img: "img/post-bg.jpg"
 catalog: true
 tags:

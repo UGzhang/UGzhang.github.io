@@ -3,7 +3,7 @@ layout:     post
 title:      The Precision Loss of Double-to-Float Conversion
 subtitle:   Incorrect display
 date:       2023-01-22
-author:     Yves
+author:     UG
 header-img: "img/post-bg.jpg"
 catalog: true
 tags:
@@ -30,6 +30,14 @@ And another problem is the gap between any two points is extremely small.
 
 As before rendering, we have the double-to-float function, combining the large-value and small-gap problem we talk about above. It may raise the precision issue, resulting in rendering two line in scene, not a curve.
 ![image](/img/20230122/3.5.png)
+```
+void dataTransfer(const Point p0, const Point p1){
+    data.push_back((float)p0.x);
+    data.push_back((float)p0.y);
+    data.push_back((float)p1.x);
+    data.push_back((float)p1.y);
+}
+```
 
 In this case, from the first to the eighth point, the value remains the same at 884828.875 by the conversion loss. However, from the ninth to last point, the value remains at 884828.9375.
 ![image](/img/20230122/3.6.png)

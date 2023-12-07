@@ -3,7 +3,7 @@ layout:     post
 title:      Non-breaking Space and Normal Space
 subtitle:   QString, std::wstring and std::string
 date:       2023-01-15
-author:     Yves
+author:     UG
 header-img: "img/post-bg.jpg"
 catalog: true
 tags:
@@ -16,7 +16,13 @@ tags:
 There is a file `A B.dxf` that is failing to import in our application. 
 
 ## Debugging
-Upon further investigation, I found the space between A and B is a [non-breaking space](https://en.wikipedia.org/wiki/Non-breaking_space) (char 160) in the QString (Unicode), rather than a normal space (char 32). This may occur when copying a string form an HTML page and naming the file. This causes an issue when converting from QString to std::string, as the char 160 is converted to char 63 ('?'), resulting in import failure. 
+Upon further investigation, I found the space between A and B is a [non-breaking space](https://en.wikipedia.org/wiki/Non-breaking_space) (char 160) in the QString (Unicode), rather than a normal space (char 32). This may occur when copying a string form an HTML page and naming the file. This causes an issue when converting from QString to std::string, as the char 160 is converted to char 63 ('?'), resulting in import failure.  
+
+```
+# file is QString
+QByteArray cdata = file.toLocal8Bit();
+std:: string name(cdata);
+```  
 ![image](/img/20230115/1.png)
 
 ## Solution
