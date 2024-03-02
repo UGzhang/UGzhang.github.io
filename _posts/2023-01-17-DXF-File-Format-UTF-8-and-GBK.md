@@ -26,7 +26,7 @@ The DXF text is initially converted from std::string to QString use [QString::fr
 ## Solution
 Check if the string format is UTF-8 or GBK(forget screenshot the code!!). If is GBK, use [QString::fromLocal8Bit](https://doc.qt.io/qt-6/qstring.html#fromLocal8Bit).
 ```
-//判断编码text的编码格式
+// Determine the encoding format of the text
 if (is_str_utf8(entity.text.data()))
 	context = QString::fromUtf8(entity.text.c_str()); //utf-8
 else
@@ -34,20 +34,22 @@ else
 ```
 
 ```
-//判断str是不是utf-8编码格式
+// Check if the string is in UTF-8 encoding
 bool is_str_utf8(const char* str)
 {
-	unsigned int nBytes = 0;//UFT8可用1-6个字节编码,ASCII用一个字节
+	// UTF-8 can be encoded in 1 to 6 bytes, while ASCII uses one byte.
+	unsigned int nBytes = 0; 
 	unsigned char chr = *str;
 	bool bAllAscii = true;
 	for (unsigned int i = 0; str[i] != '\0'; ++i) {
 		chr = *(str + i);
-		//判断是否ASCII编码,如果不是,说明有可能是UTF8,ASCII用7位编码,最高位标记为0,0xxxxxxx
+		// To determine if it's ASCII encoding, 
+		// if not, it may be UTF-8. ASCII uses 7 bits for encoding, with the highest bit marked as 0 (0xxxxxxx)
 		if (nBytes == 0 && (chr & 0x80) != 0) {
 			bAllAscii = false;
 		}
 		if (nBytes == 0) {
-			//如果不是ASCII码,应该是多字节符,计算字节数
+			//If it's not ASCII code, it should be a multi-byte character. Calculate the number of bytes
 			if (chr >= 0x80) {
 				if (chr >= 0xFC && chr <= 0xFD) {
 					nBytes = 6;
@@ -71,26 +73,28 @@ bool is_str_utf8(const char* str)
 			}
 		}
 		else {
-			//多字节符的非首字节,应为 10xxxxxx
+			// Non-initial bytes of multi-byte characters should start with 10xxxxxx
 			if ((chr & 0xC0) != 0x80) {
 				return false;
 			}
-			//减到为零为止
+			// Keep subtracting until reaching zero.
 			nBytes--;
 		}
 	}
-	//违返UTF8编码规则
+	// Violates UTF-8 encoding rules
 	if (nBytes != 0) {
 		return false;
 	}
-	if (bAllAscii) { //如果全部都是ASCII, 也是UTF8
+	if (bAllAscii) { 
+		//If it's all ASCII, it is also UTF-8
 		return true;
 	}
 	return true;
 }
 ```
-![image](/img/20230117/4.3.png) 
-
 
 ## Fixed
 ![image](/img/20230117/4.4.png) 
+
+## References
+![cnblogs](https://www.cnblogs.com/Toney-01-22/p/993529.html)

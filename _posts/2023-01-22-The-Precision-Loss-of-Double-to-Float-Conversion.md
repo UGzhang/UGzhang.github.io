@@ -29,7 +29,6 @@ And another problem is the gap between any two points is extremely small.
 ![image](/img/20230122/3.4.png)
 
 As before rendering, we have the double-to-float function, combining the large-value and small-gap problem we talk about above. It may raise the precision issue, resulting in rendering two line in scene, not a curve.
-![image](/img/20230122/3.5.png)
 ```
 void dataTransfer(const Point p0, const Point p1){
     data.push_back((float)p0.x);

@@ -21,7 +21,8 @@ A DXF file has 1422390 lines and a size of 10.5M.
 ## Result
 **Replication Times**: 100  
 Average run time **before** optimization: 1.3329s  
-Average run time **after** optimization: 0.6027s    
+Average run time **after** optimization: 0.6027s   
+Performance Improvement: (1.3329 - 0.6027) / 1.3329 * 100% = 54.8%
 
 ## Debugging
 **Tool**: Visual Studio 2019 - CPU Usage - Call Tree  
@@ -78,4 +79,4 @@ The double precision is unnecessary as the render precision is set to float.
 ![image](/img/20230116/2.9.png)
 
 ## References
-The original code from [LibreCAD](https://github.com/LibreCAD/LibreCAD).
+The code adapted from [LibreCAD](https://github.com/LibreCAD/LibreCAD).
