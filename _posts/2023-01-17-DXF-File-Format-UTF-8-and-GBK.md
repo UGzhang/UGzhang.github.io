@@ -97,4 +97,4 @@ bool is_str_utf8(const char* str)
 ![image](/img/20230117/4.4.png) 
 
 ## References
-![cnblogs](https://www.cnblogs.com/Toney-01-22/p/993529.html)
+[cnblogs](https://www.cnblogs.com/Toney-01-22/p/993529.html)

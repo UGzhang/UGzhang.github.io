@@ -77,4 +77,4 @@ void seperate(){
 ```
 
 ## References
-![stackoverflow](https://stackoverflow.com/questions/63248010/how-do-i-correctly-render-individual-letters-in-different-colors-with-alpha-blen)
+[stackoverflow](https://stackoverflow.com/questions/63248010/how-do-i-correctly-render-individual-letters-in-different-colors-with-alpha-blen)
