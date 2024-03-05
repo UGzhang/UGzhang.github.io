@@ -16,7 +16,7 @@ Ghost cells refer to additional boundary cells that are replicated or exchanged 
 ![image](/img/20240201/7.1.png) 
 
 ## Data Exchange
-We use MPI_Isend synchronously for the exchange, so MPI_Waitall is needed to wait for the receiver to finish. Running a 3000x3000 matrix with 20 processes takes 34.5 seconds.
+Using [MPI_Isend](https://rookiehpc.org/mpi/docs/mpi_isend/index.html) and [MPI_Irecv](https://rookiehpc.org/mpi/docs/mpi_irecv/index.html) synchronously for the exchange, so MPI_Waitall is needed to wait for the receiver to finish. Running a 3000x3000 matrix with 20 processes takes 34.5 seconds.
 ```
 static void exchange(Solver* solver)
 {
@@ -49,7 +49,7 @@ static void exchange(Solver* solver)
 }
 
 ```
-But using MPI_Send and MPI_Recv for the matrix of the same size results in a runtime of 35.6 seconds.
+But using [MPI_Send](https://rookiehpc.org/mpi/docs/mpi_send/index.html) and [MPI_Recv](https://rookiehpc.org/mpi/docs/mpi_recv/index.html) for the matrix of the same size results in a runtime of 35.6 seconds.
 
 
 ## Matrix Boundary
@@ -57,7 +57,6 @@ For example, using 4 processes to compute matrix 12x12, having 3 internal cells 
 ![image](/img/20240201/7.2.png) 
 
 But in my solution, I made it a bit more complex by considering that the first-ranked process doesn't need the top boundary for exchange, and the last-ranked process doesn't need the bottom boundary. To handle this, I added some if conditions to determine the boundary requirements, which is also makes my exchange function more complex.
-
 `int boundaryRow = (solver->rank == 0 || solver->rank == solver->size-1) ? 1 : 2;`
 
 My results are shown below
