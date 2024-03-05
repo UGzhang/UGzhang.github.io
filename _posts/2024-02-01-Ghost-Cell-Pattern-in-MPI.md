@@ -57,9 +57,10 @@ For example, using 4 processes to compute matrix 12x12, having 3 internal cells 
 ![image](/img/20240201/7.2.png) 
 
 But in my solution, I made it a bit more complex by considering that the first-ranked process doesn't need the top boundary for exchange, and the last-ranked process doesn't need the bottom boundary. To handle this, I added some if conditions to determine the boundary requirements, which is also makes my exchange function more complex.
+
 `int boundaryRow = (solver->rank == 0 || solver->rank == solver->size-1) ? 1 : 2;`
 
-My results are shown below
+Here are my results below. I set all the exchange row values to 0, which makes the first updated result matrix(RHS matrix) a bit different initially. However, in the end, they'll end up being the same.
 ![image](/img/20240201/7.3.jpg) 
 
 
